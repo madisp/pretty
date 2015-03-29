@@ -32,7 +32,7 @@ sourceSets {
 
 dependencies {
     compile 'org.jetbrains:annotations:13.0'
-    provided('org.robolectric:android-all:5.0.0_r2-robolectric-0') { transitive = false }
+    provided 'org.robolectric:android-all:5.0.0_r2-robolectric-0'
 }
 
 // jar with sources

@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.0.1'
+        classpath 'com.android.tools.build:gradle:1.2.0-beta1'
     }
 }
 
@@ -14,19 +14,19 @@ repositories {
 }
 
 dependencies {
-    compile project(':pretty')
     // in reality you would use something like this instead of refing the project directly:
 //    compile 'com.madisp.pretty:pretty:0.1.0'
-    compile 'com.android.support:support-v4:21.0.3'
+    compile project(':pretty')
+    compile 'com.android.support:support-v4:22.0.0'
 }
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion '21.1.2'
+    compileSdkVersion 22
+    buildToolsVersion '22.0.1'
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 21
+        minSdkVersion 15
+        targetSdkVersion 22
     }
 
     lintOptions {

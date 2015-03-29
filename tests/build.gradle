@@ -3,11 +3,12 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.0.1'
+        classpath 'com.android.tools.build:gradle:1.2.0-beta1'
     }
 }
 
 apply plugin: 'com.android.application'
+apply plugin: 'jacoco'
 
 repositories {
     mavenCentral()
@@ -15,18 +16,26 @@ repositories {
 
 dependencies {
     compile project(':pretty')
+    androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
+    androidTestCompile 'com.squareup.assertj:assertj-android:1.0.0'
 }
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion '21.1.2'
+    compileSdkVersion 22
+    buildToolsVersion '22.0.1'
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 21
+        minSdkVersion 15
+        targetSdkVersion 22
+
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
     }
 
     lintOptions {
         disable 'MissingPrefix'
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
     }
 }
